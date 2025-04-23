@@ -14,6 +14,10 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+if "authenticated" not in st.session_state or not st.session_state["authenticated"]:
+    st.error("Please login to access this page.")
+    st.stop()
+    
 # Set page configuration
 st.set_page_config(page_title="YouTube Analytics Dashboard", layout="wide")
 
